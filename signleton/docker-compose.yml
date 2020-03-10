@@ -1,0 +1,19 @@
+version: "2.2"
+services:
+  clickhouse-singleton:
+    image: yandex/clickhouse-server:19.16
+    container_name: clickhouse-singleton
+    ulimits:
+      nofile: 262144
+    volumes:
+      - ./data:/var/lib/clickhouse
+      - ./config/config.xml:/etc/clickhouse-server/config.xml
+    ports:
+      - 8123:8123
+      - 9000:9000
+    networks:
+      - docker-net
+
+networks:
+  docker-net:
+    external: true
