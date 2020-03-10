@@ -1,0 +1,13 @@
+version: "2.2"
+services:
+  clickhouse-tabix:
+    image: spoonest/clickhouse-tabix-web-client
+    container_name: clickhouse-tabix
+    ports:
+      - 9090:80
+    networks:
+      - docker-net
+
+networks:
+  docker-net:
+    external: true
