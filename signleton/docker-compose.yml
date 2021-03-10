@@ -12,8 +12,8 @@ services:
       - 8123:8123
       - 9000:9000
     networks:
-      - docker-net
+      - local-net
 
 networks:
-  docker-net:
+  local-net:
     external: true
